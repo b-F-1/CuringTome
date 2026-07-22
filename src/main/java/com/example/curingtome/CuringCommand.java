@@ -26,7 +26,7 @@ public final class CuringCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 0) {
-            sender.sendMessage(Component.text("/curingtome <give|reload> [player] [amount]", NamedTextColor.YELLOW));
+            sender.sendMessage(Component.text("/curingtome <give|reload|recipe> [player] [amount]", NamedTextColor.YELLOW));
             return true;
         }
 
@@ -46,6 +46,9 @@ public final class CuringCommand implements CommandExecutor, TabCompleter {
                     return true;
                 }
                 return handleGive(sender, args);
+            }
+            case "recipe" -> {
+                return handleRecipe(sender);
             }
             default -> {
                 sender.sendMessage(Component.text("Unknown subcommand.", NamedTextColor.RED));
@@ -87,11 +90,19 @@ public final class CuringCommand implements CommandExecutor, TabCompleter {
         return true;
     }
 
+    private boolean handleRecipe(CommandSender sender) {
+        if (sender instanceof Player p) {
+            p.discoverRecipe(tomeItem.recipeKey());
+        }
+        tomeItem.recipeDescription().forEach(sender::sendMessage);
+        return true;
+    }
+
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         List<String> out = new ArrayList<>();
         if (args.length == 1) {
-            for (String sub : List.of("give", "reload")) {
+            for (String sub : List.of("give", "reload", "recipe")) {
                 if (sub.startsWith(args[0].toLowerCase())) out.add(sub);
             }
         } else if (args.length == 2 && args[0].equalsIgnoreCase("give")) {

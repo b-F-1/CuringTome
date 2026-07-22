@@ -2,7 +2,7 @@
 
 A Paper **26.2** plugin that adds a craftable **Curing Tome**. Right-click a villager
 with it and that villager instantly grants the player the permanent zombie-cure trade
-discount — no potions, golden apples, or 3–5 minute wait required.
+discount.
 
 ## How it works
 
@@ -14,9 +14,8 @@ player's `Reputation` object, and writing it back with `villager.setReputation(u
 so no NMS is involved.
 
 Because one cure already maxes the permanent discount, using the tome again on the **same**
-villager as the **same** player does nothing extra for the permanent bonus (it only refreshes
-the temporary `minor_positive`). A **different** player gets their own discount, since the
-reputation is per-UUID.
+villager as the **same** player does nothing extra for the permanent bonus.
+A **different** player gets their own discount, since the reputation is per-UUID.
 
 ### Modes (`mode` in config.yml)
 
@@ -30,11 +29,10 @@ reputation is per-UUID.
 ## Crafting
 
 ```
- P       P = Splash Potion of Weakness (normal or long)
-GBG      G = Golden Apple   B = Book
- P
+RPR      R = Rotten Flesh
+GBG      P = Splash Potion of Weakness (normal or long)
+RPR      G = Golden Apple   B = Book
 ```
-
 ## Build
 
 Requires JDK 25 and Maven.

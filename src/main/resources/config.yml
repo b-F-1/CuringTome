@@ -40,6 +40,7 @@ effects:
   particles: true
   sound: true
   # Purely cosmetic lightning strike (no damage, no fire).
+  # Note: This will trigger the 'Surge Protector' Advancement.
   lightning: true
 
 messages:

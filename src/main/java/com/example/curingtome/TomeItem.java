@@ -93,6 +93,20 @@ public final class TomeItem {
         return recipeKey;
     }
 
+    /** Chat-friendly description of the recipe shape and ingredients. */
+    public List<Component> recipeDescription() {
+        return List.of(
+                Component.text("Curing Tome Recipe:", NamedTextColor.GOLD),
+                Component.text("R P R", NamedTextColor.GRAY),
+                Component.text("G B G", NamedTextColor.GRAY),
+                Component.text("R P R", NamedTextColor.GRAY),
+                Component.text("R = Rotten Flesh", NamedTextColor.GRAY),
+                Component.text("P = Splash Potion of Weakness (or Long)", NamedTextColor.GRAY),
+                Component.text("G = Golden Apple", NamedTextColor.GRAY),
+                Component.text("B = Book", NamedTextColor.GRAY)
+        );
+    }
+
     /** Accept either normal or extended (long) Splash Potion of Weakness. */
     private RecipeChoice weaknessChoice() {
         return new RecipeChoice.ExactChoice(
