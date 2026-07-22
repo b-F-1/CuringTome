@@ -1,0 +1,6 @@
+com\example\curingtome\CuringTomePlugin.class
+com\example\curingtome\CuringCommand.class
+com\example\curingtome\PluginConfig.class
+com\example\curingtome\PluginConfig$Mode.class
+com\example\curingtome\CuringListener.class
+com\example\curingtome\TomeItem.class

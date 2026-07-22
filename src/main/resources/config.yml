@@ -1,0 +1,53 @@
+# ==========================================================================
+#  CuringTome configuration
+# --------------------------------------------------------------------------
+#  Messages use MiniMessage formatting, e.g. <green>, <gold>, <bold>.
+# ==========================================================================
+
+# INSTANT   - keep the villager, directly grant the cure reputation (fast, trades untouched).
+# AUTHENTIC - actually zombify the villager and let vanilla run the real cure animation.
+mode: INSTANT
+
+# Permanent cure discount (major_positive). Vanilla max from one cure is 20.
+major-positive: 20
+
+# Temporary discount (minor_positive) applied to the cured villager. Vanilla is 25. Set 0 to skip.
+minor-positive: 25
+
+# Give nearby villagers a small temporary discount too (mimics the vanilla cure aura).
+affect-nearby: true
+nearby-radius: 16
+nearby-minor-positive: 5
+
+# Only allow the tome to work on villagers that already have a profession.
+require-profession: false
+
+# Remove one tome from the player's hand each time it is used.
+consume-on-use: true
+
+# Cooldown between uses per player, in seconds (0 = no cooldown).
+cooldown-seconds: 0
+
+# Register the crafting recipe. Disable if you want to distribute tomes only via /curingtome give.
+recipe-enabled: true
+
+authentic:
+  # Ticks until the zombified villager cures back (20 ticks = 1 second).
+  # Only used when mode is AUTHENTIC.
+  conversion-ticks: 60
+
+effects:
+  particles: true
+  sound: true
+  # Purely cosmetic lightning strike (no damage, no fire).
+  lightning: true
+
+messages:
+  cured: "<green>The villager has been cured. Its prices now favor you."
+  no-permission: "<red>You are not allowed to use a Curing Tome."
+  no-craft-permission: "<red>You are not allowed to craft a Curing Tome."
+  on-cooldown: "<red>You must wait <yellow><seconds>s</yellow> before using another tome."
+  not-a-villager: "<red>That is not a villager."
+  needs-profession: "<red>This villager has no profession to discount."
+  given: "<green>Gave <yellow><amount></yellow> Curing Tome(s) to <yellow><player></yellow>."
+  reloaded: "<green>CuringTome config reloaded."

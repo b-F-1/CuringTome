@@ -1,0 +1,24 @@
+name: CuringTome
+version: '1.0.0'
+main: com.example.curingtome.CuringTomePlugin
+api-version: '26.2'
+description: Adds a craftable Curing Tome that instantly grants a villager cure discount on right-click.
+author: you
+commands:
+  curingtome:
+    description: Give Curing Tomes or reload the plugin config.
+    usage: /curingtome <give|reload> [player] [amount]
+    aliases: [ctome]
+permissions:
+  curingtome.use:
+    description: Allows using the Curing Tome on a villager.
+    default: true
+  curingtome.craft:
+    description: Allows crafting the Curing Tome.
+    default: true
+  curingtome.give:
+    description: Allows giving Curing Tomes via command.
+    default: op
+  curingtome.reload:
+    description: Allows reloading the plugin config.
+    default: op
