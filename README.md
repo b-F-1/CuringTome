@@ -75,3 +75,6 @@ Alias: `/ctome`.
 `recipe-enabled`, `authentic.conversion-ticks`, the `effects` block (`particles`, `sound`,
 `lightning` — the lightning is cosmetic only), and the `messages` block (MiniMessage
 formatting).
+
+## Usage
+MIT License, if you redistribute please link back to the original repo for bug reports and maintenance, etc.
