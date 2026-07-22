@@ -4,6 +4,9 @@ A Paper **26.2** plugin that adds a craftable **Curing Tome**. Right-click a vil
 with it and that villager instantly grants the player the permanent zombie-cure trade
 discount.
 
+Note: This does not grant the `Zombie Doctor` advancement, if `effects: lightning: true`
+it will grant `Surge Protector`.
+
 ## How it works
 
 Under the hood, a "cured" villager isn't flagged with a boolean. The permanent discount is
@@ -51,6 +54,7 @@ The compiled jar lands in `target/CuringTome-1.0.0.jar`. Drop it into your serve
 ## Commands
 
 - `/curingtome give [player] [amount]` — give tomes (perm: `curingtome.give`, default op)
+- `/curingtome recipe` — prints and unlocks recipe
 - `/curingtome reload` — reload config (perm: `curingtome.reload`, default op)
 
 Alias: `/ctome`.
