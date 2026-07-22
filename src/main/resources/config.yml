@@ -5,7 +5,7 @@
 # ==========================================================================
 
 # INSTANT   - keep the villager, directly grant the cure reputation (fast, trades untouched).
-# AUTHENTIC - actually zombify the villager and let vanilla run the real cure animation.
+# AUTHENTIC - actually zombify the villager and let vanilla run the real cure animation. Does not grant Zombie Doctor advancement.
 mode: INSTANT
 
 # Permanent cure discount (major_positive). Vanilla max from one cure is 20.
